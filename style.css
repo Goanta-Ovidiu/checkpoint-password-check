@@ -51,7 +51,7 @@ main {
   cursor: pointer;
 }
 
-#input-password {
+.input-password {
   padding: 0.3rem;
   border: 2px solid black;
   border-radius: 5px;
@@ -67,15 +67,16 @@ main {
   font-weight: 500;
 }
 
-.check-section input {
-  all: initial;
+.check-section-inputs {
+  /* all: initial; */
   width: 1.5rem;
   height: 1.3rem;
   position: relative;
+  visibility: hidden;
 }
 
-.check-section input:before,
-input:after {
+.check-section-inputs.unchecked:before,
+.check-section-inputs.unchecked:after {
   content: "";
   position: absolute;
   width: 1.5rem;
@@ -83,28 +84,36 @@ input:after {
   background-color: red;
   border-radius: 5px;
   top: 1rem;
+  visibility: visible;
 }
 
-input:before {
+.check-section-inputs.unchecked:before {
   transform: rotate(45deg);
 }
 
-input:after {
+.check-section-inputs.unchecked:after {
   transform: rotate(-45deg);
 }
 
-.check-section.checked input {
+.check-section-inputs.checked {
   accent-color: green;
   width: 1.5rem;
   height: 1.3rem;
+  visibility: visible;
 }
 
 @media screen and (min-width: 700px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
   main {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    gap: 3rem;
     margin: 0 auto;
     padding: 0;
   }

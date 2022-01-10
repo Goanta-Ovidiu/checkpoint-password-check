@@ -11,35 +11,65 @@
     <h1>Password Check</h1>
     <main>
       <section class="input-section">
-        <input type="text" name="" id="input-password" />
-        <input type="text" name="" id="input-password" />
+        <input
+          type="text"
+          name=""
+          class="input-password"
+          id="input-password-one"
+        />
+        <input
+          type="text"
+          name=""
+          class="input-password"
+          id="input-password-two"
+        />
         <button id="show-hide-btn">Hide Password</button>
       </section>
       <section class="check-section">
         <label for="equal">Password are equal</label>
-        <input type="checkbox" name="checks" value="equal" id="equal-check" />
+        <input
+          type="checkbox"
+          name="checks"
+          value="equal"
+          class="check-section-inputs"
+          id="equal-check"
+          checked
+        />
         <label for="lower-case">Lower Case Letters</label>
         <input
           type="checkbox"
           name="checks"
+          class="check-section-inputs"
           value="lower-case"
           id="lowercase-check"
+          checked
         />
         <label for="upper-case">Upper Case Letters</label>
         <input
           type="checkbox"
           name="checks"
           value="upper-case"
+          class="check-section-inputs"
           id="uppercase-check"
+          checked
         />
         <label for="number">Contains Numbers</label>
-        <input type="checkbox" name="checks" value="number" id="number-check" />
+        <input
+          type="checkbox"
+          name="checks"
+          value="number"
+          class="check-section-inputs"
+          id="number-check"
+          checked
+        />
         <label for="at-least-10-character">At least 10 characters long</label>
         <input
           type="checkbox"
           name="checks"
           value="at-least-10-character"
+          class="check-section-inputs"
           id="at-least-check"
+          checked
         />
       </section>
     </main>
