@@ -8,6 +8,41 @@
     <title>Password Check App</title>
   </head>
   <body>
+    <h1>Password Check</h1>
+    <main>
+      <section class="input-section">
+        <input type="text" name="" id="input-password" />
+        <input type="text" name="" id="input-password" />
+        <button id="show-hide-btn">Hide Password</button>
+      </section>
+      <section class="check-section">
+        <label for="equal">Password are equal</label>
+        <input type="checkbox" name="checks" value="equal" id="equal-check" />
+        <label for="lower-case">Lower Case Letters</label>
+        <input
+          type="checkbox"
+          name="checks"
+          value="lower-case"
+          id="lowercase-check"
+        />
+        <label for="upper-case">Upper Case Letters</label>
+        <input
+          type="checkbox"
+          name="checks"
+          value="upper-case"
+          id="uppercase-check"
+        />
+        <label for="number">Contains Numbers</label>
+        <input type="checkbox" name="checks" value="number" id="number-check" />
+        <label for="at-least-10-character">At least 10 characters long</label>
+        <input
+          type="checkbox"
+          name="checks"
+          value="at-least-10-character"
+          id="at-least-check"
+        />
+      </section>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
