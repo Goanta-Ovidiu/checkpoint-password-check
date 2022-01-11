@@ -67,15 +67,34 @@ main {
   font-weight: 500;
 }
 
-.check-section-inputs {
-  /* all: initial; */
+@media screen and (min-width: 700px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+/* style with checkbox Method */
+
+/* .check-section-inputs {
+  all: initial;
   width: 1.5rem;
   height: 1.3rem;
   position: relative;
   visibility: hidden;
-}
+} */
 
-.check-section-inputs.unchecked:before,
+/* .check-section-inputs.unchecked:before,
 .check-section-inputs.unchecked:after {
   content: "";
   position: absolute;
@@ -100,21 +119,4 @@ main {
   width: 1.5rem;
   height: 1.3rem;
   visibility: visible;
-}
-
-@media screen and (min-width: 700px) {
-  body {
-    display: flex;
-    flex-direction: column;
-  }
-
-  main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 3rem;
-    margin: 0 auto;
-    padding: 0;
-  }
-}
+} */

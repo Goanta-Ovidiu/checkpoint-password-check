@@ -1,26 +1,81 @@
-const inputPasswordOne = document.querySelector("#input-password-one");
-const inputPasswordTwo = document.querySelector("#input-password-two");
-const showHideBtn = document.querySelector("#show-hide-btn");
-const passwordAreEqual = document.querySelectorAll(".check-section-inputs");
+const inputField = document.querySelector(".input-section");
+const checkInputs = document.querySelectorAll(".check-section-inputs");
+const passwordFieldOne = document.querySelector("#input-password-one");
+const passwordFieldTwo = document.querySelector("#input-password-two");
+const btnShowHide = document.querySelector("#show-hide-btn");
+const lowerCase = document.querySelector("#lowercase-check");
+const toUpperCase = document.querySelector("#uppercase-check");
+const includesNumber = document.querySelector("#number-check");
+const atLeast10Char = document.querySelector("#at-least-check");
 
-showHideBtn.addEventListener("click", () => {
-  if (inputPasswordOne.type === "text" && inputPasswordTwo.type === "text") {
-    inputPasswordOne.type = "password";
-    inputPasswordTwo.type = "password";
-    showHideBtn.innerHTML = "Show Password";
+inputField.addEventListener("input", checkForEqual);
+btnShowHide.addEventListener("click", showHidePassword);
 
-    passwordAreEqual.forEach((element) => element.classList.add("checked"));
-    passwordAreEqual.forEach((element) =>
-      element.classList.remove("unchecked")
-    );
-  } else if (
-    inputPasswordOne.type === "password" &&
-    inputPasswordTwo.type === "password"
+function checkForEqual() {
+  const isEqual = document.querySelector("#equal-check");
+  if (
+    passwordFieldOne.value === passwordFieldTwo.value &&
+    passwordFieldOne.value !== ""
   ) {
-    inputPasswordOne.type = "text";
-    inputPasswordTwo.type = "text";
-    showHideBtn.innerHTML = "Hide Password";
-    passwordAreEqual.forEach((element) => element.classList.remove("checked"));
-    passwordAreEqual.forEach((element) => element.classList.add("unchecked"));
+    isEqual.innerHTML = "✅";
+  } else {
+    isEqual.innerHTML = "❌";
   }
-});
+  checkForLowerCase();
+  checkForUpperCase();
+  checkForNumber();
+  checkForAtLeast10Char();
+}
+
+const hasLowerCase = (str) => /[a-z]/.test(str);
+
+const isUpperCase = (string) => /[A-Z]/.test(string);
+const hasNumber = (string) => /[0-9]/.test(string);
+
+function checkForLowerCase() {
+  if (hasLowerCase(passwordFieldOne.value)) {
+    lowerCase.innerHTML = "✅";
+  } else {
+    lowerCase.innerHTML = "❌";
+  }
+}
+
+function checkForUpperCase() {
+  if (isUpperCase(passwordFieldOne.value)) {
+    toUpperCase.innerHTML = "✅";
+  } else {
+    toUpperCase.innerHTML = "❌";
+  }
+}
+
+function checkForNumber() {
+  if (hasNumber(passwordFieldOne.value)) {
+    includesNumber.innerHTML = "✅";
+  } else {
+    includesNumber.innerHTML = "❌";
+  }
+}
+
+function checkForAtLeast10Char() {
+  if (passwordFieldOne.value.length >= 10) {
+    atLeast10Char.innerHTML = "✅";
+  } else {
+    atLeast10Char.innerHTML = "❌";
+  }
+}
+
+function showHidePassword() {
+  if (passwordFieldOne.type === "text" && passwordFieldTwo.type === "text") {
+    passwordFieldOne.type = "password";
+    passwordFieldTwo.type = "password";
+    btnShowHide.innerHTML = "Show password";
+  } else if (
+    passwordFieldOne.type !== "text" &&
+    passwordFieldTwo.type !== "text"
+  ) {
+    passwordFieldOne.type = "text";
+    passwordFieldTwo.type = "text";
+
+    btnShowHide.innerHTML = "Hide password";
+  }
+}
