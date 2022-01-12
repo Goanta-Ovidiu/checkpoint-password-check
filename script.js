@@ -1,12 +1,7 @@
 const inputField = document.querySelector(".input-section");
-const checkInputs = document.querySelectorAll(".check-section-inputs");
 const passwordFieldOne = document.querySelector("#input-password-one");
 const passwordFieldTwo = document.querySelector("#input-password-two");
 const btnShowHide = document.querySelector("#show-hide-btn");
-const lowerCase = document.querySelector("#lowercase-check");
-const toUpperCase = document.querySelector("#uppercase-check");
-const includesNumber = document.querySelector("#number-check");
-const atLeast10Char = document.querySelector("#at-least-check");
 
 inputField.addEventListener("input", checkForEqual);
 btnShowHide.addEventListener("click", showHidePassword);
@@ -29,10 +24,8 @@ function checkForEqual() {
 
 const hasLowerCase = (str) => /[a-z]/.test(str);
 
-const isUpperCase = (string) => /[A-Z]/.test(string);
-const hasNumber = (string) => /[0-9]/.test(string);
-
 function checkForLowerCase() {
+  const lowerCase = document.querySelector("#lowercase-check");
   if (hasLowerCase(passwordFieldOne.value)) {
     lowerCase.innerHTML = "✅";
   } else {
@@ -40,7 +33,10 @@ function checkForLowerCase() {
   }
 }
 
+const isUpperCase = (string) => /[A-Z]/.test(string);
+
 function checkForUpperCase() {
+  const toUpperCase = document.querySelector("#uppercase-check");
   if (isUpperCase(passwordFieldOne.value)) {
     toUpperCase.innerHTML = "✅";
   } else {
@@ -48,7 +44,10 @@ function checkForUpperCase() {
   }
 }
 
+const hasNumber = (string) => /[0-9]/.test(string);
+
 function checkForNumber() {
+  const includesNumber = document.querySelector("#number-check");
   if (hasNumber(passwordFieldOne.value)) {
     includesNumber.innerHTML = "✅";
   } else {
@@ -57,6 +56,7 @@ function checkForNumber() {
 }
 
 function checkForAtLeast10Char() {
+  const atLeast10Char = document.querySelector("#at-least-check");
   if (passwordFieldOne.value.length >= 10) {
     atLeast10Char.innerHTML = "✅";
   } else {
