@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Password Check App</title>
+  </head>
+  <body>
+    <header>
+      <h1>Password Check</h1>
+    </header>
+    <main>
+      <section class="input-section">
+        <input
+          type="text"
+          name=""
+          class="input-password"
+          id="input-password-one"
+        />
+        <input
+          type="text"
+          name=""
+          class="input-password"
+          id="input-password-two"
+        />
+        <button id="show-hide-btn">Hide Password</button>
+      </section>
+      <section class="check-section">
+        <p>Password are equal</p>
+        <p class="check-section-inputs" id="equal-check">❌</p>
+        <p>Lower Case Letters</p>
+        <p class="check-section-inputs" id="lowercase-check">❌</p>
+
+        <p>Upper Case Letters</p>
+        <p class="check-section-inputs" id="uppercase-check">❌</p>
+        <p>Contains Numbers</p>
+        <p class="check-section-inputs" id="number-check">❌</p>
+        <p>At least 10 characters long</p>
+        <p class="check-section-inputs" id="at-least-check">❌</p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

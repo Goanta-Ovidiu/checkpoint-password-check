@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: lightsalmon;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-family: "Lobster", cursive;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin: 4rem;
+  text-shadow: 4px 4px 0px black;
+  font-size: 4rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 2rem;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem auto;
+  gap: 0.5rem;
+}
+
+#show-hide-btn {
+  padding: 0.5rem;
+  color: white;
+  background-color: black;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.input-password {
+  padding: 0.3rem;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.check-section {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 1rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+/* style with checkbox Method */
+
+/* .check-section-inputs {
+  all: initial;
+  width: 1.5rem;
+  height: 1.3rem;
+  position: relative;
+  visibility: hidden;
+} */
+
+/* .check-section-inputs.unchecked:before,
+.check-section-inputs.unchecked:after {
+  content: "";
+  position: absolute;
+  width: 1.5rem;
+  height: 0.3rem;
+  background-color: red;
+  border-radius: 5px;
+  top: 1rem;
+  visibility: visible;
+}
+
+.check-section-inputs.unchecked:before {
+  transform: rotate(45deg);
+}
+
+.check-section-inputs.unchecked:after {
+  transform: rotate(-45deg);
+}
+
+.check-section-inputs.checked {
+  accent-color: green;
+  width: 1.5rem;
+  height: 1.3rem;
+  visibility: visible;
+} */
